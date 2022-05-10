@@ -58,6 +58,7 @@ class _BetterPlayerListVideoPlayerState
       betterPlayerPlaylistConfiguration:
           const BetterPlayerPlaylistConfiguration(),
     );
+    _betterPlayerController!.setVolume(0.0);
 
     if (widget.betterPlayerListVideoPlayerController != null) {
       widget.betterPlayerListVideoPlayerController!
@@ -89,11 +90,19 @@ class _BetterPlayerListVideoPlayerState
     final bool? isPlaying = _betterPlayerController!.isPlaying();
     final bool? initialized = _betterPlayerController!.isVideoInitialized();
     if (visibleFraction >= widget.playFraction) {
-      if (widget.autoPlay && initialized! && !isPlaying! && !_isDisposing) {
+      if (mounted &&
+          widget.autoPlay &&
+          initialized! &&
+          !isPlaying! &&
+          !_isDisposing) {
         _betterPlayerController!.play();
       }
     } else {
-      if (widget.autoPause && initialized! && isPlaying! && !_isDisposing) {
+      if (mounted &&
+          widget.autoPause &&
+          initialized! &&
+          isPlaying! &&
+          !_isDisposing) {
         _betterPlayerController!.pause();
       }
     }
