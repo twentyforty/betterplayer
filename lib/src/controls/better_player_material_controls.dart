@@ -173,7 +173,7 @@ class _BetterPlayerMaterialControlsState
                 },
                 child: Text(
                   _betterPlayerController!.translations.generalRetry,
-                  style: textStyle.copyWith(fontWeight: FontWeight.bold),
+                  style: textStyle.copyWith(fontWeight: FontWeight.w500),
                 ),
               )
           ],
@@ -329,7 +329,7 @@ class _BetterPlayerMaterialControlsState
       _betterPlayerController!.translations.controlsLive,
       style: TextStyle(
           color: _controlsConfiguration.liveTextColor,
-          fontWeight: FontWeight.bold),
+          fontWeight: FontWeight.w500),
     );
   }
 
